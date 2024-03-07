@@ -108,22 +108,10 @@ export const servicesItems = [
 ];
 
 export const reviewItems = [
-	{
-		review: "Heel blij met de video's van Rani! Ze heeft goed gekeken naar de unieke kenmerken van het merk en daarop ingespeeld in de video's. Ook leverde ze meer dan beloofd, wat altijd een mooie plus is.",
-		reviewer: "~ Sophie, IDUNMINERALS",
-	},
-	{
-		review: "Rani heeft ons geholpen met onze eerste UGC video en we zijn erg te spreken over de samenwerking. Je kunt goed overleggen met Rani en ze komt haar afspraken goed na. Zo stuurde ze een filmpje op en wilde we het een en ander aangepast hebben en werd dit snel naar tevredenheid gedaan. Al met al fijne samenwerking! Bedankt namens Team Somora.",
-		reviewer: "~ Sandra / NUMBUZIN",
-	},
-	{
-		review: "Super tevreden over de video die Rani voor mijn bedrijf heeft gemaakt! Communicatie ging erg soepel en Rani heeft de content echt onwijs snel ingeleverd. Mijn complimenten! Zeker een aanrader!",
-		reviewer: "~ Sophie, IDUNMINERALS",
-	},
-	{
-		review: "We zijn heel blij met de samenwerking met Rani! Ze komt natuurlijk over en is goed in het maken van 1 geheeld. Ze luistert goed naar je wensen en staat altijd open voor aanpassingen.",
-		reviewer: "~ Sandra / NUMBUZIN",
-	},
+	"Heel blij met de video's van Rani! Ze heeft goed gekeken naar de unieke kenmerken van het merk en daarop ingespeeld in de video's. Ook leverde ze meer dan beloofd, wat altijd een mooie plus is.",
+	"Rani heeft ons geholpen met onze eerste UGC video en we zijn erg te spreken over de samenwerking. Je kunt goed overleggen met Rani en ze komt haar afspraken goed na. Zo stuurde ze een filmpje op en wilde we het een en ander aangepast hebben en werd dit snel naar tevredenheid gedaan. Al met al fijne samenwerking! Bedankt namens Team Somora.",
+	"Super tevreden over de video die Rani voor mijn bedrijf heeft gemaakt! Communicatie ging erg soepel en Rani heeft de content echt onwijs snel ingeleverd. Mijn complimenten! Zeker een aanrader!",
+	"We zijn heel blij met de samenwerking met Rani! Ze komt natuurlijk over en is goed in het maken van 1 geheeld. Ze luistert goed naar je wensen en staat altijd open voor aanpassingen.",
 ];
 
 export const processItems = [

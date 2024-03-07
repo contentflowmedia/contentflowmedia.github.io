@@ -36,11 +36,9 @@ const Carousel = ({ children }) => {
 			<ArrowBackIosNewRoundedIcon onClick={prevSlide} />
 
 			<Slider ref={sliderRef} {...settings}>
-				{children.map((slide, index) => (
+				{children.map((review, index) => (
 					<div className="slide" key={index}>
-						<p>{slide.review}</p>
-
-						<h3>{slide.reviewer}</h3>
+						<p>{review}</p>
 					</div>
 				))}
 			</Slider>
