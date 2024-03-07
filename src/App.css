@@ -1,0 +1,916 @@
+:root {
+	--nude-light: #f1ece4;
+	--nude-medium: #ddcebe;
+	--secondary: #5a7b57;
+}
+
+body {
+	background-color: var(--nude-light);
+}
+
+/* Nav animations */
+@keyframes fadeNavOpen {
+	0% {
+		top: -30vh;
+		display: none;
+	}
+	100% {
+		top: 5rem;
+		display: block;
+	}
+}
+
+@keyframes fadeNavClose {
+	0% {
+		top: 5rem;
+		display: block;
+	}
+	100% {
+		top: -30vh;
+		display: none;
+	}
+}
+
+/* Loader animations */
+@keyframes l16-1 {
+	0%,
+	100% {
+		background-size: 20% 100%;
+	}
+	33%,
+	66% {
+		background-size: 20% 40%;
+	}
+}
+
+@keyframes l16-2 {
+	0%,
+	33% {
+		background-position: 0 0, 50% 100%, 100% 0;
+	}
+	66%,
+	100% {
+		background-position: 0 100%, 50% 0, 100% 100%;
+	}
+}
+
+/* General styling */
+h1 {
+	font-size: clamp(30px, 4vw, 45px);
+}
+
+h2 {
+	font-size: clamp(26px, 3.47vw, 38px);
+}
+
+h1,
+h2,
+h4 {
+	font-family: "Gowun Batang", serif;
+	font-weight: unset;
+	margin: 0;
+}
+
+h3 {
+	font-size: clamp(18px, 2.4vw, 22px);
+	font-weight: 500;
+	margin: 0;
+}
+
+h4 {
+	font-size: clamp(60px, 8vw, 85px);
+	color: var(--secondary);
+	opacity: 35%;
+}
+
+p {
+	font-size: clamp(16px, 2.13vw, 18px);
+	margin: 0;
+}
+
+img {
+	object-fit: cover;
+	object-position: center;
+}
+
+a {
+	cursor: pointer;
+}
+
+button {
+	border: unset;
+	background-color: unset;
+	height: fit-content;
+	width: fit-content;
+	padding: 0;
+}
+
+.button {
+	cursor: pointer;
+	display: block;
+	width: fit-content;
+	border: 0.75px solid black;
+	padding: 0.5rem 0.75rem;
+	font-size: clamp(14px, 1.87vw, 16px);
+}
+
+.button:hover {
+	background-color: rgba(221, 206, 190, 0.2);
+}
+
+.relative {
+	position: relative;
+}
+
+.dark-background {
+	background-color: var(--nude-medium);
+	padding: clamp(2rem, 4.27vw, 3rem) 0 clamp(2.5rem, 5.33vw, 3.5rem);
+}
+
+/* Header styling */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 7.5%;
+	width: 85%;
+	z-index: 99;
+}
+
+header::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	left: -7.5vw;
+	width: 100vw;
+	border-bottom: 1px solid black;
+	background-color: var(--nude-light);
+	z-index: -1;
+}
+
+header img {
+	height: 3rem;
+	margin: 1rem 0 1rem;
+}
+
+header button {
+	font-size: clamp(1.8rem, 3.84vw, 2rem);
+	height: 28.8px;
+	color: black;
+	stroke: var(--nude-light);
+	stroke-width: 0.5;
+}
+
+header nav {
+	display: none;
+	position: absolute;
+	left: -7.5vw;
+	width: 100vw;
+	padding-top: 1.5rem;
+	list-style: none;
+	text-align: center;
+	background-color: var(--nude-light);
+	z-index: -2;
+	box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.2);
+}
+
+header nav.navOpen {
+	display: block;
+	animation: fadeNavOpen 0.3s ease-in forwards;
+}
+
+header nav.closeNav {
+	animation: fadeNavClose 0.2s ease-in forwards;
+}
+
+header nav li {
+	margin-bottom: 2rem;
+}
+
+/* Main styling */
+main > *:nth-child(even) {
+	margin: clamp(4rem, 8.53vw, 8rem) 0;
+}
+
+/* Main content Intro styling */
+main #intro {
+	margin-top: 5rem;
+}
+
+main #intro img {
+	width: 100%;
+	max-height: calc(100vh - 5rem);
+}
+
+main #intro article {
+	width: 85%;
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 1.5rem 7.5% 0;
+}
+
+main #intro article p {
+	margin: 0.5rem 0 1rem;
+}
+
+/* Main content Pros styling */
+main #pros h2 {
+	width: 85%;
+	margin: 0 auto;
+}
+
+main #pros section section {
+	margin: 2rem 0;
+}
+
+main #pros section article {
+	padding: 1rem 7.5%;
+}
+
+main #pros section article:first-child {
+	border-top: 0.5px solid black;
+}
+
+main #pros section article:nth-child(even) {
+	border-top: 0.5px solid black;
+	border-bottom: 0.5px solid black;
+}
+
+main #pros section article:last-child {
+	border-bottom: 0.5px solid black;
+}
+
+main #pros section article div {
+	display: flex;
+}
+
+main #pros section article > div {
+	justify-content: space-between;
+}
+
+main #pros section article div div {
+	gap: 0.75rem;
+}
+
+main #pros section img {
+	height: clamp(25px, 3.33vw, 30px);
+}
+
+main #pros section article p {
+	margin-top: 0.5rem;
+}
+
+main #pros section a {
+	margin-left: 7.5%;
+}
+
+main #pros > img {
+	display: none;
+}
+
+/* Main content Services styling */
+main #services {
+	text-align: center;
+	width: 85%;
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+main #services .show-line {
+	height: 1.5rem;
+	width: 0.75px;
+	background-color: black;
+	margin: 1rem auto 0;
+}
+
+main #services .show-line-large {
+	display: none;
+}
+
+main #services section h3 {
+	position: absolute;
+	bottom: 0.5rem;
+	left: 10%;
+	right: 10%;
+}
+
+main #services section > div > p {
+	margin: 0.25rem 0 1.5rem;
+}
+
+main #services section .included {
+	cursor: pointer;
+	padding-bottom: 0.5rem;
+}
+
+main #services section .included div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+	max-width: 400px;
+	padding: 0 0.5rem 0.5rem;
+	margin: 0 auto;
+	border-bottom: 0.5px solid black;
+}
+
+main #services section .included ul {
+	width: 80%;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	text-align: left;
+	list-style-position: inside;
+}
+
+main #services section .included li {
+	font-size: clamp(16px, 2.13vw, 18px);
+	margin: 0;
+}
+
+/* Main content Reviews styling */
+main #reviews {
+	position: relative;
+	text-align: center;
+}
+
+main #reviews .carousel {
+	width: 62%;
+	max-width: 550px;
+	margin: 2rem auto 0;
+}
+
+main #reviews .carousel .slick-track {
+	display: flex;
+	align-items: center;
+}
+
+main #reviews .carousel h3 {
+	margin-top: 1.5rem;
+}
+
+main #reviews .carousel svg {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	font-size: clamp(24px, 3.2vw, 40px);
+	stroke: var(--nude-medium);
+	stroke-width: 0.75;
+}
+
+main #reviews .carousel svg:first-of-type {
+	left: 7.5%;
+}
+
+main #reviews .carousel svg:last-of-type {
+	right: 7.5%;
+}
+
+/* Main content About styling */
+main #about {
+	width: 85%;
+	max-width: 455px;
+	margin: 0 auto;
+}
+main #about .about-images {
+	position: relative;
+}
+
+main #about .about-images h4 {
+	position: absolute;
+	left: 0;
+	transform: rotate(90deg);
+	transform-origin: 25% 45%;
+	font-size: clamp(60px, 18.75vw, 100px);
+}
+
+main #about .about-images img {
+	object-fit: cover;
+	object-position: center;
+}
+
+main #about .about-images img:first-of-type {
+	width: 65.63vw;
+	max-width: 350px;
+	height: 65.63vw;
+	max-height: 350px;
+	display: block;
+	margin-left: auto;
+}
+
+main #about .about-images img:last-of-type {
+	width: 35.31vw;
+	max-width: 188px;
+	height: 35.31vw;
+	max-height: 188px;
+	position: absolute;
+	bottom: calc(-35.31vw / 2);
+	left: 0;
+}
+
+main #about .about-text {
+	margin-top: calc((35.31vw / 2) + 1.75rem);
+}
+
+main #about .about-text > *:not(:last-child) {
+	margin-bottom: 0.75rem;
+}
+
+@media (min-width: 535px) {
+	main #about .about-images img:last-of-type {
+		bottom: -94px;
+	}
+
+	main #about .about-text {
+		margin-top: calc(94px + 1.75rem);
+	}
+}
+
+/* Main content Process styling */
+main #process h2 {
+	width: 85%;
+	margin: 0 auto clamp(2rem, 4.27vw, 3rem);
+}
+
+main #process div {
+	width: 85%;
+	margin: 0 auto;
+	border-left: 0.75px solid black;
+}
+
+main #process div > *:not(:last-child) {
+	margin-bottom: clamp(4rem, 8.53vw, 6rem);
+}
+
+main #process div section {
+	position: relative;
+}
+
+main #process div section h4 {
+	position: absolute;
+	top: -1.25rem;
+	left: -2rem;
+}
+
+main #process div section article {
+	margin-left: clamp(3rem, 6.4vw, 4.5rem);
+	max-width: 650px;
+}
+
+/* Main content Contact styling */
+main #contact {
+	width: 85%;
+	max-width: 455px;
+	margin: 0 auto clamp(4rem, 8.53vw, 8rem);
+}
+
+main #contact img {
+	width: 100%;
+}
+
+main #contact section {
+	margin-top: 1.5rem;
+}
+
+main #contact section > div {
+	margin-bottom: 3rem;
+}
+
+main #contact section > div > *:nth-of-type(-n + 2) {
+	margin-bottom: 0.75rem;
+}
+
+main #contact section form > div:first-child > * {
+	display: block;
+	border: unset;
+	border-bottom: 1px solid black;
+	background-color: unset;
+	padding: 0.5rem;
+	width: 95%;
+	margin-bottom: 1.5rem;
+	font-size: clamp(16px, 2.13vw, 18px);
+}
+
+main #contact section form > div:first-child > * {
+	outline: unset;
+}
+
+main #contact section form input::placeholder,
+main #contact section form textarea::placeholder {
+	color: black;
+}
+
+main #contact section form button {
+	color: black;
+	font-weight: 400;
+	margin-top: 0.5rem;
+}
+
+main #contact section form .loader-container {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+main #contact section form .loader {
+	width: 1rem;
+	height: 1rem;
+	aspect-ratio: 1;
+	--c: no-repeat linear-gradient(#000 0 0);
+	background: var(--c), var(--c), var(--c);
+	animation: l16-1 1.5s infinite, l16-2 1.5s infinite;
+}
+
+/* Footer styling */
+footer {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+/* Tablet styling */
+@media (min-width: 750px) {
+	main #pros section article p {
+		margin-top: 0.75rem;
+		width: 75%;
+	}
+
+	main #process div section h4 {
+		top: -2.67vw;
+		left: -4.27vw;
+	}
+}
+
+/* Desktop styling */
+@media (min-width: 1000px) {
+	/* Header styling */
+	header {
+		align-items: center;
+		width: 90%;
+		left: 5%;
+	}
+
+	header::before {
+		left: -5vw;
+	}
+
+	header img {
+		height: 3.5rem;
+	}
+
+	header button {
+		display: none;
+	}
+
+	header nav {
+		display: flex;
+		position: unset;
+		animation: unset;
+		padding-top: 0;
+		background-color: unset;
+		z-index: 0;
+		box-shadow: unset;
+		width: fit-content;
+	}
+
+	header nav.closeNav {
+		animation: unset;
+	}
+
+	header nav li {
+		margin-bottom: 0;
+		margin-left: 2rem;
+	}
+
+	/* Main content Intro styling */
+	main #intro {
+		position: relative;
+		overflow: hidden;
+		margin-top: 5.5rem;
+	}
+
+	main #intro img {
+		width: 115%;
+		max-height: calc(100vh - 5.5rem);
+	}
+
+	main #intro article {
+		position: absolute;
+		left: 5%;
+		top: 50%;
+		transform: translateY(-50%);
+		max-width: 475px;
+		background-color: rgba(241, 236, 228, 0.8);
+		padding: 2rem 2.25rem 2.5rem;
+	}
+
+	main #intro article h1 {
+		line-height: 3.5rem;
+	}
+
+	main #intro article p {
+		margin: 1rem 0 1.75rem;
+	}
+
+	/* Main content Pros styling */
+	main #pros {
+		display: flex;
+		position: relative;
+		width: 90%;
+		max-width: 1150px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	main #pros > section {
+		width: 50%;
+	}
+
+	main #pros section section {
+		margin: 2.25rem 0;
+	}
+
+	main #pros section article {
+		padding: 1.25rem 7.5%;
+		cursor: pointer;
+	}
+
+	main #pros section article:hover,
+	main #pros section a:hover {
+		background-color: rgba(241, 236, 228, 0.2);
+	}
+
+	main #pros section article:first-child {
+		border-top: 0.75px solid black;
+	}
+
+	main #pros section article:nth-child(even) {
+		border-top: 0.75px solid black;
+		border-bottom: 0.75px solid black;
+	}
+
+	main #pros section article div div {
+		gap: 1rem;
+		width: 90%;
+	}
+
+	main #pros section article p {
+		margin-top: 0.75rem;
+		width: 85%;
+	}
+
+	main #pros > img {
+		display: unset;
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		right: 0;
+	}
+
+	/* Main content Services styling */
+	main #services {
+		text-align: center;
+		width: 90%;
+		max-width: 1600px;
+	}
+
+	main #services > div {
+		display: flex;
+	}
+
+	main #services > div > * {
+		width: 33.33%;
+		padding: 0 1.5vw 1.5rem;
+	}
+
+	main #services > div > *:nth-child(odd) {
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+	}
+
+	main #services .show-line {
+		display: none;
+	}
+
+	main #services .show-line-large {
+		display: block;
+		height: 3.5rem;
+		width: 1px;
+		margin: 1.5rem auto 2.5rem;
+		background-color: black;
+	}
+
+	main #services section {
+		display: flex;
+		flex-direction: column;
+		justify-content: initial;
+		flex-basis: auto;
+		flex-grow: 1;
+		flex-shrink: 1;
+		height: 100%;
+	}
+
+	main #services section h3 {
+		bottom: 1rem;
+	}
+
+	main #services section > div:first-child {
+		min-height: 615px;
+	}
+
+	main #services section > div > p {
+		margin: 0.5rem 0 2.5rem;
+	}
+
+	main #services section .included {
+		padding-bottom: 0.5rem;
+	}
+
+	main #services section .included div {
+		display: flex;
+		align-items: center;
+		padding: 0 0.5rem 0.5rem;
+		margin: 0 auto;
+		border-bottom: 0.75px solid black;
+	}
+
+	main #services section .included ul {
+		text-align: left;
+		list-style-position: inside;
+	}
+
+	main #services section .included li {
+		font-size: clamp(16px, 2.13vw, 18px);
+		margin: 0;
+	}
+
+	/* Main content Reviews styling */
+	main #reviews {
+		padding: 3rem 0 3.5rem;
+	}
+
+	main #reviews .carousel {
+		position: relative;
+	}
+
+	main #reviews .carousel svg {
+		top: calc();
+		transform: translateY(-100%);
+		stroke-width: 1.25;
+	}
+
+	main #reviews .carousel svg:first-of-type {
+		left: -25%;
+	}
+
+	main #reviews .carousel svg:last-of-type {
+		right: -25%;
+	}
+
+	/* Main content About styling */
+	main #about {
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		max-width: 1150px;
+	}
+	main #about .about-images {
+		width: 38%;
+		max-width: 460px;
+		height: fit-content;
+	}
+
+	main #about .about-images h4 {
+		font-size: clamp(60px, 6vw, 85px);
+	}
+
+	main #about .about-images img:first-of-type {
+		width: 27.5vw;
+		max-width: 360px;
+		height: 27.5vw;
+		max-height: 360px;
+	}
+
+	main #about .about-images img:last-of-type {
+		width: 15.75vw;
+		max-width: 190px;
+		height: 15.75vw;
+		max-height: 190px;
+		bottom: -15%;
+	}
+
+	main #about .about-text {
+		width: 58%;
+		max-width: 550px;
+		margin-top: 0;
+	}
+
+	main #about .about-text > *:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	/* Main content Process styling */
+	main #process h2 {
+		width: 90%;
+		text-align: center;
+		margin-bottom: 5rem;
+	}
+
+	main #process div {
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		max-width: 1600px;
+		border-left: unset;
+		border-top: 0.75px solid black;
+	}
+
+	main #process div > * {
+		width: 21.5%;
+	}
+
+	main #process div > *:not(:last-child) {
+		margin-bottom: 0;
+	}
+
+	main #process div section h4 {
+		top: -3.75rem;
+		left: 0;
+	}
+
+	main #process div section article {
+		margin-left: 0;
+		margin-top: 3.5rem;
+	}
+
+	/* Main content Contact styling */
+	main #contact {
+		position: relative;
+		width: 90%;
+		max-width: 1150px;
+	}
+
+	main #contact img {
+		position: absolute;
+		right: 0;
+		width: 45%;
+		height: 100%;
+	}
+
+	main #contact section {
+		width: 52%;
+		max-width: 550px;
+		margin-top: 0;
+	}
+
+	main #contact section > div > *:nth-of-type(-n + 2) {
+		margin-bottom: 1rem;
+	}
+
+	main #contact section form > div:first-child {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	main #contact section form > div:first-child > * {
+		width: 42.5%;
+		margin-bottom: 2rem;
+	}
+
+	main #contact section form > div:first-child textarea {
+		width: 100%;
+	}
+}
+
+@media (min-width: 1250px) {
+	main #intro img {
+		width: 100%;
+	}
+
+	main #services section > div:first-child {
+		min-height: 576px;
+	}
+
+	main #services > div > * {
+		padding: 0 2.9vw 1.5rem;
+	}
+
+	main #about .about-images {
+		width: 41%;
+	}
+}
+
+@media (min-width: 1400px) {
+	main #services section > div:first-child {
+		min-height: 531px;
+	}
+}
+
+@media (min-width: 1600px) {
+	main #services section > div:first-child {
+		min-height: 464px;
+	}
+}

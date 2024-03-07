@@ -1,0 +1,16 @@
+body {
+	margin: 0;
+	font-family: "Quicksand", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+input,
+textarea,
+button {
+	font-family: inherit;
+}
+
+code {
+	font-family: "Quicksand", Helvetica, sans-serif;
+}
