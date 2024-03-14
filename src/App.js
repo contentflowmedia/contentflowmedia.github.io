@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import logo from "./logo.svg";
+import logo from "./assets/images/logo.png";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Link, Element } from "react-scroll";
 import coverImage from "./assets/images/cover.JPG";
@@ -120,7 +120,7 @@ function App() {
 
 				<Element id="pros" name={navItems[0].toLowerCase()}>
 					<section className="dark-background">
-						<h2>Stel je eens voor...</h2>
+						<h2>Dit krijg je!</h2>
 
 						<section>
 							{prosItems.map((pro, index) => (

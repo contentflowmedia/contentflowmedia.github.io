@@ -772,6 +772,7 @@ footer {
 	/* Main content About styling */
 	main #about {
 		display: flex;
+		flex-direction: row-reverse;
 		justify-content: space-between;
 		width: 90%;
 		max-width: 1150px;
